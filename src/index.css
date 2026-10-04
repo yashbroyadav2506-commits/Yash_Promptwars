@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Atkinson Hyperlegible', 'Lexend', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* High-visibility WCAG 2.2 AA compliant focus indicators */
+  *:focus-visible {
+    outline: 2px solid #d97706;
+    outline-offset: 3px;
+  }
+}
+
+/* Light & Dark mode contrast themes */
+.theme-dark {
+  background-color: #0b0c10;
+  color: #f3f4f6;
+}
+
+.theme-light {
+  background-color: #fbfbfd;
+  color: #111827;
+}
+
+/* Tactile non-color texture patterns for Attention Map (WCAG 2.2 AA non-color reliance) */
+.pattern-stripes-airtime {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(14, 165, 233, 0.4),
+    rgba(14, 165, 233, 0.4) 5px,
+    rgba(14, 165, 233, 0.75) 5px,
+    rgba(14, 165, 233, 0.75) 10px
+  );
+}
+
+.pattern-dots-weight {
+  background-image: radial-gradient(
+    circle,
+    rgba(217, 119, 6, 0.95) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 7px 7px;
+}
+
+/* Unique pattern fill per dimension */
+.pattern-dim-money {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(16, 185, 129, 0.25),
+    rgba(16, 185, 129, 0.25) 4px,
+    rgba(16, 185, 129, 0.6) 4px,
+    rgba(16, 185, 129, 0.6) 8px
+  );
+}
+
+.pattern-dim-time {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(56, 189, 248, 0.25),
+    rgba(56, 189, 248, 0.25) 4px,
+    rgba(56, 189, 248, 0.6) 4px,
+    rgba(56, 189, 248, 0.6) 8px
+  );
+}
+
+.pattern-dim-health {
+  background-image: radial-gradient(
+    circle,
+    rgba(244, 63, 94, 0.6) 2px,
+    transparent 2px
+  );
+  background-size: 8px 8px;
+}
+
+.pattern-dim-learning {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(245, 158, 11, 0.3) 0px,
+    rgba(245, 158, 11, 0.3) 2px,
+    transparent 2px,
+    transparent 6px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0.3) 0px,
+    rgba(245, 158, 11, 0.3) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+.pattern-dim-relationships {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(168, 85, 247, 0.3) 0px,
+    rgba(168, 85, 247, 0.3) 2px,
+    transparent 2px,
+    transparent 7px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(168, 85, 247, 0.3) 0px,
+    rgba(168, 85, 247, 0.3) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+}
+
+.pattern-dim-reversibility {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(234, 179, 8, 0.25),
+    rgba(234, 179, 8, 0.25) 4px,
+    rgba(234, 179, 8, 0.6) 4px,
+    rgba(234, 179, 8, 0.6) 8px
+  );
+}
+
+.pattern-dim-longterm {
+  background-image: repeating-linear-gradient(
+    60deg,
+    rgba(99, 102, 241, 0.25),
+    rgba(99, 102, 241, 0.25) 3px,
+    rgba(99, 102, 241, 0.6) 3px,
+    rgba(99, 102, 241, 0.6) 7px
+  );
+}
+
+.pattern-dim-opportunity {
+  background-image: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.7) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 6px 6px;
+}
+
+.pattern-dim-people {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(249, 115, 22, 0.3),
+    rgba(249, 115, 22, 0.3) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+.pattern-dim-default {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(148, 163, 184, 0.3),
+    rgba(148, 163, 184, 0.3) 4px,
+    rgba(148, 163, 184, 0.6) 4px,
+    rgba(148, 163, 184, 0.6) 8px
+  );
+}
+
+/* Print export stylesheet for Decision Reflection Summary */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+  }
+
+  header, nav, footer, button, .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: #111827 !important;
+  }
+
+  .print-card {
+    border: 1px solid #d1d5db !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessible reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

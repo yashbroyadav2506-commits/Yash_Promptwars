@@ -1,0 +1,6 @@
+{
+  "name": "BlindSpot: Decision Reasoning X-Ray",
+  "description": "An AI-powered decision reasoning auditor that exposes attention gaps, unstated assumptions, and internal conflicts without recommending or scoring options.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
